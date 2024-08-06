@@ -18,6 +18,9 @@ class Room(models.Model):
     created = models.DateTimeField(auto_now_add=True)
     # id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
 
+    class Meta:
+        ordering = ['-updated', '-created']
+    
     def __str__(self) -> str:
         return self.name
     
